@@ -14,6 +14,17 @@ const numbersText = [
 ];
 
 
+
+function initSound(letter){
+
+	createjs.Sound.registerSound(`./sound/${letter}.mp3`,'letterSound',4)
+	
+}
+
+
+
+
+
 let count = Number(localStorage.count);
 
 if (count === undefined || isNaN(count)){
@@ -53,6 +64,11 @@ show_ask = async () =>{
 	if (number_ask === 11) {
 		number_ask -= 10
 	}
+	initSound(number_ask-1)
+	document.getElementById("ask").onclick = () => {
+		createjs.Sound.play('letterSound')
+	}
+
 	document.getElementById("ask").innerText = numbersText[number_ask-1]
 	let answers_arr = [0,1,2]
 	let stateAnswer = getRandomIntInclusive(0,2)
