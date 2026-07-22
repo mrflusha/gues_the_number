@@ -1,5 +1,5 @@
 //document.write("hello")
-
+vkBridge.send("VKWebAppInit", {});
 const numbersText = [
   "один",
   "два",
