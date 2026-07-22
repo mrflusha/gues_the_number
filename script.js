@@ -1,5 +1,6 @@
 //document.write("hello")
 vkBridge.send("VKWebAppInit", {});
+createjs.Sound.registerPlugins([createjs.HTMLAudioPlugin]
 const numbersText = [
   "один",
   "два",
