@@ -1,6 +1,7 @@
 //document.write("hello")
 //vkBridge.send("VKWebAppInit", {});
-
+getServerTime();
+let ads_showed = false;
 console.log("a")
 const numbersText = [
   "один",
