@@ -1,7 +1,6 @@
 //document.write("hello")
 //vkBridge.send("VKWebAppInit", {});
 
-document.getElementById('LOL').style.display = 'none';
 console.log("a")
 const numbersText = [
   "один",
@@ -45,6 +44,7 @@ initGame = async () => {
 	await vkBridge.send("VKWebAppInit", {});
 	document.getElementById("LOL").style.display = "none"
 	createjs.Sound.registerPlugins([createjs.HTMLAudioPlugin])
+	show_baner()
 
 }
 
