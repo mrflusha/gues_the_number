@@ -35,6 +35,51 @@ body{
 		width: 100vw;
 	height: 95vh;
 }
+#LOL{
+
+	display: flex;
+	overflow: hidden;
+	position: fixed;
+
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: #FFF;
+	z-index: 5;
+	color: GREEN;
+	flex-direction: column;
+	font-family: 'Noto', sans-serif;
+	font-size: 6vh;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently*/
+
+}
+
+.spinner {
+    height: 0.7em;
+    width: 0.7em;
+    border-left: 0.7vh solid greenyellow;
+    border-bottom: 0.7vh solid greenyellow;
+    border-right: 0.7vh solid greenyellow;
+    border-top: 0.7vh solid transparent;
+    border-radius: 50vh;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+ 
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 #menu{
 	display: flex;

@@ -1,6 +1,8 @@
 //document.write("hello")
-vkBridge.send("VKWebAppInit", {});
-createjs.Sound.registerPlugins([createjs.HTMLAudioPlugin]
+//vkBridge.send("VKWebAppInit", {});
+
+document.getElementById('LOL').style.display = 'none';
+console.log("a")
 const numbersText = [
   "один",
   "два",
@@ -14,7 +16,22 @@ const numbersText = [
   "десять"
 ];
 
-
+document.getElementById("LOL").onclick = () => {
+	document.getElementById("LOL").style.display = "none"
+}
+fonts_ready = async () => {
+	fonts = await document.fonts.ready.then(() => {
+  // All required fonts are loaded and ready to be used.
+  console.log("All document fonts are ready!");
+  return true
+  // You can now safely manipulate elements or perform actions that depend on font metrics.
+  // For example, trigger an animation or update layout.
+}).catch(error => {
+  console.error("Error loading fonts:", error);
+  return false
+});
+	return fonts
+}
 
 function initSound(letter){
 
@@ -24,6 +41,14 @@ function initSound(letter){
 
 
 
+initGame = async () => {
+	await vkBridge.send("VKWebAppInit", {});
+	document.getElementById("LOL").style.display = "none"
+	createjs.Sound.registerPlugins([createjs.HTMLAudioPlugin])
+
+}
+
+initGame()
 
 
 let count = Number(localStorage.count);
