@@ -164,6 +164,9 @@ randomAsk = () => {
 	number_ask = getRandomIntInclusive(1,10)
 	initSound(number_ask-1)
 	document.getElementById("ask").innerText = numbersText[number_ask-1]
+	document.getElementById("ask").onclick = () => {
+		createjs.Sound.play('letterSound')
+	}
 	let answers_arr = [0,1,2]
 	let stateAnswer = getRandomIntInclusive(0,2)
 	answers_arr.splice(stateAnswer, 1)
