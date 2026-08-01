@@ -72,7 +72,7 @@ get_values = async () => {
 
 open_pay_windows = async (user_id) => {
   open = await vkBridge.send('VKWebAppOpenPayForm', {
-    app_id: 54690035,
+    app_id: '54703319',
     action: 'pay-to-service',
     params: {
       user_id: user_id,
