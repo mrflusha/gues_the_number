@@ -68,3 +68,39 @@ get_values = async () => {
 
         return valuesArr
 }
+
+
+open_pay_windows = async (user_id) => {
+  open = await vkBridge.send('VKWebAppOpenPayForm', {
+    app_id: 54690035,
+    action: 'pay-to-service',
+    params: {
+      user_id: user_id,
+      description: `Test Payment`,
+      amount: "1"      
+    }})
+  .then((data) => {
+    if (data.status) {
+      // Экран VK Pay показан
+    }
+  })
+  .catch((error) => {
+    // Ошибка
+    console.log(error);
+    return error
+  });
+}
+
+get_id = async () => {
+  vk_user_id = await vkBridge.send('VKWebAppGetLaunchParams')
+  .then((data) => { 
+    if (data.vk_app_id) {
+      return data.vk_user_id// Параметры запуска получены
+    }
+  })
+  .catch((error) => {
+    // Ошибка
+    console.log(error);
+  });
+  return vk_user_id
+}

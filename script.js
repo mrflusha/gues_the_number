@@ -46,6 +46,8 @@ initGame = async () => {
 	document.getElementById("LOL").style.display = "none"
 	createjs.Sound.registerPlugins([createjs.HTMLAudioPlugin])
 	show_baner()
+	vk_id = await get_id()
+	console.log(vk_id)
 
 }
 
@@ -255,4 +257,9 @@ function getRandomIntInclusive(min, max) {
   const minCeiled = Math.ceil(min);
   const maxFloored = Math.floor(max);
   return Math.floor(Math.random() * (maxFloored - minCeiled + 1)) + minCeiled; 
+}
+
+
+document.getElementById('buy_subscribe').onclick = async () => {
+	await open_pay_windows(vk_id)
 }
